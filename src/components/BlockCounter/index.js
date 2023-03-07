@@ -1,19 +1,17 @@
 import React, {Component} from 'react';
-import PropTypes from 'prop-types';
 import Counter from '../Counter';
-import styles from './BlockCounter.module.css';
+import styles from './BlockCounter.module.scss';
+import {CONSTANTS} from "../../constants";
 
 class BlockCounter extends Component {
-
     constructor(props) {
         super(props);
         this.state = {
             step: 0,
         };
     }
-
     handleInput = ({target: {value}}) => {
-       const { step: { min, max } } = this.props;
+        const { min, max } = CONSTANTS;
         if (value >= min && value < max) {
             this.setState({step: Number(value)});
         }
@@ -33,21 +31,6 @@ class BlockCounter extends Component {
             </div>
         );
     }
-}
-
-BlockCounter.defaultProps = {
-    step: {
-        min: 0,
-        max: 100000,
-    },
-}
-
-BlockCounter.propTypes = {
-    step: PropTypes.shape({
-        min: PropTypes.number.isRequired,
-        max: PropTypes.number.isRequired,
-    }),
-
 }
 
 export default BlockCounter;

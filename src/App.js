@@ -1,11 +1,9 @@
 import React from 'react';
+import "./App.css";
 import BlockCounter from './components/BlockCounter';
-import CONSTANTS from "./constants";
 
 const App = () => {
-    const {step} = CONSTANTS;
-
-    return <BlockCounter step={step}/>;
+    return <BlockCounter/>;
 }
 
 export default App;

@@ -1,0 +1,18 @@
+@use "/src/common/styles/template" as *;
+@use "/src/common/styles/colors" as colors;
+@use "/src/common/styles/mixins" as mx;
+@import "src/common/styles/colors";
+
+$r: 5px;
+.currentContainer {
+    @extend .container;
+    background-color: $color-main;
+    color: $color-text;
+    @extend %one-line;
+}
+.input {
+    padding: 10px 0;
+    margin: auto;
+    @include mx.border-radius($r);
+    border: 2px solid $color-main;
+}
