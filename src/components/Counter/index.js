@@ -26,6 +26,10 @@ class Counter extends Component {
         this.setState({isAdd: !isAdd});
     };
 
+    shouldComponentUpdate(nextProps, nextState) {
+        return nextProps.step === this.props.step;
+    }
+
     render() {
         const {isAdd, count} = this.state;
         return (
